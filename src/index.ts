@@ -13,9 +13,19 @@ async function main() {
     }
   );
 
+  bot.onSlashCommand("help", async (handler, { channelId }) => {
+    await handler.sendMessage(
+      channelId,
+      `I am Honoré de Balzac. I am here to help you.`
+    );
+  });
+
   bot.onSlashCommand("time", async (handler, { channelId }) => {
     const currentTime = new Date().toLocaleString();
-    await handler.sendMessage(channelId, `Current time: ${currentTime} ⏰`);
+    await handler.sendMessage(
+      channelId,
+      `I am Honoré de Balzac. It's 5:00 somewhere in the world right now.`
+    );
   });
 
   bot.onMessage(async (handler, { message, channelId, eventId, createdAt }) => {
